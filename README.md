@@ -51,7 +51,7 @@ git clone https://aur.archlinux.org/yay-bin.git /tmp/yay && cd /tmp/yay && makep
 
 ```sh
 # pacman packages
-sudo pacman -S --needed i3-wm polybar rofi feh nautilus kitty slop xclip ttf-opensans ttf-iosevka-nerd picom xorg-xrandr
+sudo pacman -S --needed i3-wm polybar rofi feh nautilus kitty slop xclip ttf-opensans ttf-iosevka-nerd picom xorg-xrandr xorg-xsetroot
 
 # AUR packages
 yay -S --needed i3lock-color ffcast
@@ -99,13 +99,15 @@ Add `exec feh --bg-fill ~/Pictures/Wallpapers/background.jpg` to your i3 config 
 ## Keybindings
 
 | Key | Action |
-|---|---|
+|---|---|---|
 | `Mod + Return` | Terminal |
 | `Mod + Space` | App launcher (rofi) |
 | `Mod + B` | Firefox |
 | `Mod + E` | Nautilus |
 | `Mod + Q` | Kill window |
 | `Mod + F` | Toggle fullscreen |
+| `Mod + H` / `J` / `K` / `L` | Focus left / down / up / right |
+| `Mod + Shift + H` / `J` / `K` / `L` | Move window left / down / up / right |
 | `Mod + W` | Tabbed layout |
 | `Mod + U` / `Mod + I` | Workspace prev / next |
 | `Mod + Tab` | Previous workspace |
@@ -141,4 +143,5 @@ Add `exec feh --bg-fill ~/Pictures/Wallpapers/background.jpg` to your i3 config 
 - `slop`, `xclip`, `ffcast` — screenshots (AUR)
 - `picom` — compositor
 - `xorg-xrandr` — display resolution detection (needed by lock script)
+- `xorg-xsetroot` — reset cursor after unlock
 - `ttf-opensans`, `ttf-iosevka-nerd` — fonts
