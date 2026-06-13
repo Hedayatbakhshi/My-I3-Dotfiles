@@ -6,6 +6,8 @@ Arch Linux i3 dotfiles with niri-style keybindings.
 
 These dotfiles are built around **i3wm** with keybindings ported from **niri** (scrollable-tiling window manager). The config provides a familiar niri experience using i3 underneath.
 
+Inspired by [Keyitdev/dotfiles](https://github.com/Keyitdev/dotfiles).
+
 ## Files
 
 ```
