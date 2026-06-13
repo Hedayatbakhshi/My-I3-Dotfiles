@@ -15,6 +15,9 @@ exec --no-startup-id xset r rate 250 40
 exec --no-startup-id feh --no-fehbg --randomize --bg-fill $HOME/Pictures/Wallpapers
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id xinput set-prop " USB OPTICAL MOUSE" "libinput Accel Speed" 1.0
+exec --no-startup-id xinput set-prop "DELL0A34:00 0488:101D Touchpad" "libinput Accel Speed" 0.7
+exec --no-startup-id xinput set-prop "DELL0A34:00 0488:101D Touchpad" "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id dunst
 exec --no-startup-id mpd
 # exec --no-startup-id picom
