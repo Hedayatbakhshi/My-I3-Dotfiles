@@ -19,10 +19,10 @@ exec --no-startup-id picom
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 # exec --no-startup-id battery_listener
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id volume_control -s +5 -m 125 && volume_level
-bindsym XF86AudioLowerVolume exec --no-startup-id volume_control -s -5 -m 125 && volume_level
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && volume_mute
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && microphone_mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/dell/.local/bin/volume_control -s +5 -m 125 && /home/dell/.local/bin/volume_level
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/dell/.local/bin/volume_control -s -5 -m 125 && /home/dell/.local/bin/volume_level
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && /home/dell/.local/bin/volume_mute
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && /home/dell/.local/bin/microphone_mute
 bindsym Ctrl+F5 exec --no-startup-id asus_fan_toggle
 bindsym XF86ScreenSaver exec --no-startup-id xset dpms force off
 bindsym XF86MonBrightnessDown exec --no-startup-id brightness_control -s -2 && brightness_level
@@ -41,8 +41,8 @@ bindsym Print exec /home/dell/.local/bin/screenshot -sf
 # ── niri-style application binds ──────────────────────────────────────
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+space exec --no-startup-id rofi -show drun -no-default-config -config ~/.config/rofi/main.rasi
-bindsym $mod+b exec --no-startup-id firefox-developer-edition
-bindsym $mod+e exec --no-startup-id nautilus
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+e exec --no-startup-id nautilus --new-window
 bindsym $mod+z exec --no-startup-id kitty -e zeditor
 bindsym $mod+a exec --no-startup-id rofi -show drun -no-default-config -config ~/.config/rofi/dmenu.rasi
 
@@ -52,7 +52,7 @@ bindsym $mod+q kill
 bindsym $mod+o exec --no-startup-id kitty -e ncmpcpp  # music
 bindsym $mod+x exec --no-startup-id /home/dell/.local/bin/rofi-powermenu
 bindsym $mod+Shift+s exec --no-startup-id /home/dell/.local/bin/screenshot -sa
-bindsym $mod+s exec --no-startup-id nautilus ~/Pictures/screenshots/
+bindsym $mod+s exec --no-startup-id nautilus --new-window ~/Pictures/screenshots/
 bindsym $mod+Mod1+l exec /home/dell/.local/bin/lock
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+p exec xset dpms force off
