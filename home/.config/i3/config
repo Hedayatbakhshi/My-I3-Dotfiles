@@ -7,8 +7,10 @@ tiling_drag modifier titlebar
 
 font pango:Open sans 11
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Fluent-dark'
 exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/dell/.local/bin/lock
 exec --no-startup-id xrandr --dpi 96
+exec --no-startup-id xset r rate 250 40
 
 exec --no-startup-id feh --no-fehbg --randomize --bg-fill $HOME/Pictures/Wallpapers
 exec --no-startup-id $HOME/.config/polybar/launch.sh
@@ -71,12 +73,12 @@ bindsym ctrl+F2 exec --no-startup-id kitty
 bindsym ctrl+F3 exec --no-startup-id dmenu_run
 bindsym ctrl+F4 exec --no-startup-id killall picom
 
-# ── HJKL navigation (niri-style) ─────────────────────────────────────
+# ── HJKL navigation (vim-style) ──────────────────────────────────────
 # focus (H← J↓ K↑ L→)
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # arrow keys as alternative
 bindsym $mod+Left focus left
@@ -85,10 +87,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window (Shift+HJKL)
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # arrow keys alternative
 bindsym $mod+Shift+Left move left
@@ -97,7 +99,6 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # ── Layout ───────────────────────────────────────────────────────────
-bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
@@ -157,6 +158,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+u workspace prev
 bindsym $mod+i workspace next
 
+# ── Mouse ────────────────────────────────────────────────────────────
+default_border pixel 2
+mouse_warping output
+
 # ── Session ──────────────────────────────────────────────────────────
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -199,14 +204,6 @@ bar {
 ### BORDERS ###
 
 hide_edge_borders smart
-
-#border width
-default_border pixel 2
-
-#border colors
-client.focused #343746 #343746 #F8F8F2 #343746 #343746
-client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
-client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
 
 ### GAPS ###
 
