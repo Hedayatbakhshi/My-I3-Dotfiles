@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+options=" Shutdown\n Reboot\n Lock\n Logout\n Suspend"
+
+chosen=$(echo -e "$options" | rofi -dmenu -p "Power" -config ~/.config/rofi/dmenu.rasi)
+
+case "$chosen" in
+    " Shutdown") systemctl poweroff ;;
+    " Reboot")   systemctl reboot ;;
+    " Lock")     /home/dell/.local/bin/lock ;;
+    " Logout")   i3-msg exit ;;
+    " Suspend")  systemctl suspend ;;
+esac
