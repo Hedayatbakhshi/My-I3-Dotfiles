@@ -15,7 +15,7 @@ exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id dunst
 exec --no-startup-id mpd
-exec --no-startup-id picom
+# exec --no-startup-id picom
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 # exec --no-startup-id battery_listener
 
@@ -25,8 +25,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && /home/dell/.local/bin/microphone_mute
 bindsym Ctrl+F5 exec --no-startup-id asus_fan_toggle
 bindsym XF86ScreenSaver exec --no-startup-id xset dpms force off
-bindsym XF86MonBrightnessDown exec --no-startup-id brightness_control -s -2 && brightness_level
-bindsym XF86MonBrightnessUp exec --no-startup-id brightness_control -s +2 && brightness_level
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/dell/.local/bin/brightness_control -s -2 && /home/dell/.local/bin/brightness_level
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/dell/.local/bin/brightness_control -s +2 && /home/dell/.local/bin/brightness_level
 bindsym XF86TouchpadToggle exec --no-startup-id touchpad_toggle
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
